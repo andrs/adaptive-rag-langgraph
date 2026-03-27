@@ -39,12 +39,13 @@ SELECT SUM(s.amount) AS total_sold
 FROM sales s 
 JOIN products p ON s.product = p.product 
 WHERE p.product = 'Dell XPS 15';
-4. Final Result
-Assistant: "A total of 10 Dell XPS 15 laptops were sold."
 
-📝 Full Agent Logs
+> #### 4. Final Result
+> Assistant: "A total of 10 Dell XPS 15 laptops were sold."
+
+#### 📝 Full Agent Logs
 Plaintext
-Question: How many Dell XPS 15 laptops were sold?
+> Question: How many Dell XPS 15 laptops were sold?
 
 ```
 --- Agent Reasoning History ---
