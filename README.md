@@ -1,9 +1,9 @@
-🤖 Text-to-SQL Intelligent Agent with LangGraph
+## 🤖 Text-to-SQL Intelligent Agent with LangGraph
 An autonomous Sr. SQL Developer Agent capable of transforming natural language questions into precise ANSI SQL queries, executing them against a SQLite database, and returning human-readable insights.
 
 Built with LangGraph to manage stateful, cyclic workflows and OpenAI/Google VertexAI for advanced reasoning.
 
-🚀 Overview
+## 🚀 Overview
 This agent doesn't just "guess" SQL. It follows a strict ReAct (Reasoning + Acting) protocol to ensure accuracy and prevent hallucinations:
 
 Exploration: Lists all available tables in the database.
@@ -14,7 +14,7 @@ Generation: Constructs a valid ANSI SQL query based on the retrieved metadata.
 
 Execution: Runs the query and interprets the result for the user.
 
-🛠️ Tech Stack
+## 🛠️ Tech Stack
 Orchestration: LangGraph
 
 LLM: OpenAI gpt-4o-mini (or Google VertexAI gemini-2.5-pro)
@@ -46,8 +46,11 @@ Assistant: "A total of 10 Dell XPS 15 laptops were sold."
 Plaintext
 Question: How many Dell XPS 15 laptops were sold?
 
+```
 --- Agent Reasoning History ---
+
 ================================ System Message ================================
+
 You are a Sr. SQL Developer. Strictly follow this protocol:
 1. Identify relevant tables using 'list_tables_tool'.
 2. Retrieve the schema for those tables using 'get_table_schema_tool'.
@@ -64,7 +67,11 @@ Tool Calls: get_table_schema_tool (table_name: sales) -> [{'name': 'product', ..
 Tool Calls: execute_sql_tool (query: SELECT SUM(s.amount) FROM sales ...) -> [(10,)]
 
 ================================ Ai Message ==================================
-A total of 10 Dell XPS 15 laptops were sold.
+```
+> Result
+> 
+> A total of 10 Dell XPS 15 laptops were sold.
+
 🔧 Setup
 Clone the repository.
 
